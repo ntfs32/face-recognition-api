@@ -4,6 +4,9 @@ WORKDIR /srv
 
 ADD . .
 
+RUN \
+    apk add git python make gcc g++
+
 RUN \ 
     yarn
 
