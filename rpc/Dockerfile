@@ -7,6 +7,8 @@ ADD . .
 RUN \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk add --no-cache --virtual .build-deps \
+    gfortran libblas-dev liblapack-dev \
+    py-pip wget freetype-dev libpng-dev openblas-dev \
     git make gcc g++ build-base libffi-dev musl-dev linux-headers  && \
     mkdir -p ~/.pip && \
     cp pip.conf ~/.pip/pip.conf && \
