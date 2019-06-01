@@ -6,7 +6,7 @@ ADD . .
 
 RUN \
     apk add --no-cache --virtual .build-deps \
-    git make gcc g++ && \
+    git python3-dev make gcc g++ && \
     mkdir -p ~/.pip && \
     cp pip.conf ~/.pip/pip.conf && \
     pip install -r requirements.txt &&\
