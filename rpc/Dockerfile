@@ -4,7 +4,9 @@ WORKDIR /srv
 
 ADD . .
 
-RUN \ 
+RUN \
+    mkdir -p ~/.pip && \
+    cp pip.conf ~/.pip/pip.conf && \
     pip install -r requirements.txt
 
 EXPOSE 8001
