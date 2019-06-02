@@ -23,7 +23,10 @@ RUN pip3 --version \
     build-base python3-dev openblas-dev freetype-dev pkgconfig gfortran \
     && apk --no-cache --update add mariadb-dev jpeg-dev \
     make gcc g++ cmake \
-    && pip3 install --no-cache-dir -r requirements.txt \
+    # pip3 install --no-cache-dir scipy && \
+    pip3 install --no-cache-dir zerorpc && \
+    pip3 install --no-cache-dir face_recognition && \
+    # && pip3 install --no-cache-dir -r requirements.txt \
     && apk del scipy-build \
     && rm -rf /var/cache/apk/* 
 
