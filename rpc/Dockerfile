@@ -22,6 +22,7 @@ RUN pip3 --version \
     && apk --no-cache --update add --virtual scipy-build \
     build-base python3-dev openblas-dev freetype-dev pkgconfig gfortran \
     && apk --no-cache --update add mariadb-dev jpeg-dev \
+    make gcc g++ cmake \
     && pip3 install --no-cache-dir -r requirements.txt \
     && apk del scipy-build \
     && rm -rf /var/cache/apk/* 
