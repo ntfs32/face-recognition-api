@@ -1,7 +1,7 @@
 FROM python:3.6-alpine
 
-RUN mkdir -p ~/.pip && \
-COPY ./pip.conf ~/.pip/pip.conf && \
+RUN mkdir -p ~/.pip
+COPY ./pip.conf ~/.pip/pip.conf
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
     apk --update add --virtual scipy-runtime python3 py3-pip \
